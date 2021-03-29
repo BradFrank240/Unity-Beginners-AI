@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    //Goal for bot to reach. 
-    //vector3 is the vector form of 3D
-    Vector3 Goal = new Vector3(6, 0, -4);
+    //script to move goal cube
+
+    //Stores inputs
+    private float _HorizontalInput;
+    private float _VerticalInput;
+
+    //Stores speed
+    public float playerSpeed = 2f;
 
 
-    void Start()
+
+    private void Update()
     {
-        Goal = Goal * 0.01f;
-          
+        //Gets inputs
+        _HorizontalInput = Input.GetAxis("Horizontal");
+        _VerticalInput = Input.GetAxis("Vertical");
     }
 
-   
-    void Update()
+    private void LateUpdate()
     {
-        this.transform.Translate(Goal);
+        this.transform.Translate(new Vector3(_HorizontalInput, 0, _VerticalInput) * playerSpeed * Time.deltaTime);
     }
+
+
+
 }

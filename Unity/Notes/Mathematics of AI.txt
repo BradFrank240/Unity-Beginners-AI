@@ -1,3 +1,50 @@
 Notes on videos throughout "The Mathematics of AI".
 
 1.Cartesian Plane: Went over basic x and y plane and camera settings.
+Just getting users familier with working in dimensions. 
+
+2. Vectors: A vector can be anywhere in space. It holds the direction and
+magnitude of it's length. Magnitude being found usings pythrograus therum. 
+ (a^2 + b^2 = c^2) = (x^2 + y^2 = ||v||). ||v|| is a mathematical representation
+of a vector's length. transform.Translate(goal); adds goal to position. 
+A normalized versions of a vector is any vector that is 1 in length. 
+So this would have a vector3 move in the direction by 1, you can multiply this
+by a speed value. Update does not happen a constant speed. Therefore to make
+the translate happen at the same time multply by deltaTime. Also when translateing
+you want to move in late update as that's when physics are done performing.
+
+3. Vectors Part 2: Extending from the last lecture, making bot move to goal and 
+stop once reached. To find direction to move in, direction = end point - current point.
+To make character to stop trying to move to goal, you need a "close enough" point
+where the bot stops trying to move towards goal.  LookAt(goal) method sets the rotation
+to look in the direction of the parramater goal. 
+
+
+4.Calculating Distance: Obvious but important, calculating distance is very common
+in bots as they they need to know if they are too close or far to do somthing.
+float distance = Mathf.Sqrt(Mathf.Pow(tankPosition.x - fuelPosition.x, 2) + Mathf.Pow(tankPosition.y - fuelPosition.y, 2));
+order does not mater as long as the same point is placed at the begging. 
+Unity has a method that performs this for you, but you should know how distance is calculated.
+Vector3.Distance(xPosition, fuelPosition);
+also unity versions does the z factor as well, all three dimensions. This would look like
+Mathf.Sqrt(Mathf.Pow(tankPosition.x - fuelPosition.x, 2) + Mathf.Pow(tankPosition.y - fuelPosition.y, 2) + Math.Pow(tankPosition.z - fuelPosition.y, 2));
+
+5.Dot Product : The sum of multplication of the corrosponding components of two values.
+AKA two vectors multiplied together and then added.
+d = v.x * w.x + v.y * w.y
+This tells you what kind of angle you are looking at, if dot product is greater than zero, less than 90 degrees.
+if dot product = 0 than its angle is 90 degrees.
+if less than 0 it's greater than 90 degrees. 
+You can use this to look at two directions to see if they are the same aka if dot product = 0.
+//dot product divided by distance and inverse of cos = angle you should be looking 
+float dot = tankForward.x * fuelDirection.x + tankForward.y * fuelDirection.y;
+float b = Mathf.Acos(dot / (tankForward.magnitude * fuelDirection.magnitude));
+//My calculation
+print("Angle " + b * Mathf.Rad2Deg);
+//unity calculations 
+print("Unity angle " + Vector3.Angle(tankForward, fuelDirection));
+
+
+
+
+
