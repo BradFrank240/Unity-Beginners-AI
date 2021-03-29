@@ -44,6 +44,15 @@ print("Angle " + b * Mathf.Rad2Deg);
 //unity calculations 
 print("Unity angle " + Vector3.Angle(tankForward, fuelDirection));
 
+6.Cross Product: To find out which direction to move torwards, cross product is a equation that
+can tell you. The equation is:
+v = (v.x, v.y, v.z)
+w = (w.x, w.y, w.z)
+v x w = (v.y * w.z - v.z * w.y, v.z * w.x - v.x * w.z, v.x * w.y - v.y * w.x)
+The resulting vector is one that is perpindicular to the two vectors.
+
+
+
 
 
 
