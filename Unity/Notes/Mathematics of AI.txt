@@ -1,0 +1,3 @@
+Notes on videos throughout "The Mathematics of AI".
+
+1.Cartesian Plane: Went over basic x and y plane and camera settings.
