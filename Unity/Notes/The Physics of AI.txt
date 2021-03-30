@@ -1,0 +1,10 @@
+The Physics of AI
+
+7. Time: The Update method runs once per frame, therefore if time was measured in update, than 
+time would depend on framerate. Their is an excution order for methods. For Ai, focus on fixedUpdate,
+Update and LateUpdate. Gives an example of the adam model in a scene. Late update and update both 
+run once per frame. Fixxed update runs the physics as many times as it needs to. You can use
+time.delta time to track time between updates. 
+
+8. Velocity: v = distance / time. As you learned in school, velocity is the speed and direction
+and object is moving. 
