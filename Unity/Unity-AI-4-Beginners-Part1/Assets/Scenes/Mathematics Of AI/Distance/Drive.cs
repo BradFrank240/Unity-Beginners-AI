@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drive : MonoBehaviour
+public class RealDrive : MonoBehaviour
 {
 
     public float speed = 10.0f;

@@ -30,6 +30,7 @@ public class MoveToGoal : MonoBehaviour
         this.transform.LookAt(goal.position);
         Debug.DrawRay(this.transform.position, direction, Color.red);
         
+        
         //if too far. 
         if(direction.magnitude > accuracy)
         {

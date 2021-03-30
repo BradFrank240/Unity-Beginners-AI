@@ -22,12 +22,12 @@ public class CrossProduct : MonoBehaviour
         //Find the angle between two objects using dot product
 
         //tank forward direction
-        Vector3 tankForward = this.transform.up;
+        Vector3 tankForward = transform.up;
         //See where the tank is faceing 
         //Debug.DrawRay(transform.position , tF * 10 , Color.blue, 2);
 
         //fuel direction
-        Vector3 fuelDirection = fuel.transform.position - this.transform.position;
+        Vector3 fuelDirection = fuel.transform.position - transform.position;
         //See direction of fuel
         //Debug.DrawRay(transform.position, fD, Color.green, 2);
 
@@ -42,15 +42,16 @@ public class CrossProduct : MonoBehaviour
         //unity calculations 
         print("Unity angle " + Vector3.Angle(tankForward, fuelDirection));
 
+        /* The clockwise system can be replaced by the unity method Vector3.SignedAngle();
         int clockwise = 1;
         if(Cross(tankForward, fuelDirection).z < 0)
         {
             clockwise = -1;
         }
+        */
+        
 
-        //not sure if this is how it's suppose to work. 
-
-        float unityAngle = Vector3.SignedAngle(tankForward, fuelDirection, this.transform.forward);
+        float unityAngle = Vector3.SignedAngle(tankForward, fuelDirection, transform.forward);
 
 
         this.transform.Rotate(0, 0, angle * Mathf.Rad2Deg * unityAngle);

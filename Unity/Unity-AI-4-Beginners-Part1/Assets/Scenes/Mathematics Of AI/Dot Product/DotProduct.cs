@@ -27,12 +27,12 @@ public class DotProduct : MonoBehaviour
         //tank forward direction
         Vector3 tankForward = this.transform.up;
         //See where the tank is faceing 
-        //Debug.DrawRay(transform.position , tF * 10 , Color.blue, 2);
+        Debug.DrawRay(transform.position , tankForward * 10 , Color.blue, 2);
 
         //fuel direction
         Vector3 fuelDirection = fuel.transform.position - this.transform.position;
         //See direction of fuel
-        //Debug.DrawRay(transform.position, fD, Color.green, 2);
+        Debug.DrawRay(transform.position, fuelDirection, Color.green, 2);
 
         //dot product divided by distance and inverse of cos = angle you should be looking 
 
@@ -44,6 +44,8 @@ public class DotProduct : MonoBehaviour
 
         //unity calculations 
         print("Unity angle " + Vector3.Angle(tankForward, fuelDirection));
+
+        
     }
 
 

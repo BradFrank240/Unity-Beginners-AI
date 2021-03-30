@@ -12,15 +12,14 @@ So this would have a vector3 move in the direction by 1, you can multiply this
 by a speed value. Update does not happen a constant speed. Therefore to make
 the translate happen at the same time multply by deltaTime. Also when translateing
 you want to move in late update as that's when physics are done performing.
-
-3. Vectors Part 2: Extending from the last lecture, making bot move to goal and 
+Vectors Part 2: Extending from the last lecture, making bot move to goal and 
 stop once reached. To find direction to move in, direction = end point - current point.
 To make character to stop trying to move to goal, you need a "close enough" point
 where the bot stops trying to move towards goal.  LookAt(goal) method sets the rotation
 to look in the direction of the parramater goal. 
 
 
-4.Calculating Distance: Obvious but important, calculating distance is very common
+3.Calculating Distance: Obvious but important, calculating distance is very common
 in bots as they they need to know if they are too close or far to do somthing.
 float distance = Mathf.Sqrt(Mathf.Pow(tankPosition.x - fuelPosition.x, 2) + Mathf.Pow(tankPosition.y - fuelPosition.y, 2));
 order does not mater as long as the same point is placed at the begging. 
@@ -29,7 +28,7 @@ Vector3.Distance(xPosition, fuelPosition);
 also unity versions does the z factor as well, all three dimensions. This would look like
 Mathf.Sqrt(Mathf.Pow(tankPosition.x - fuelPosition.x, 2) + Mathf.Pow(tankPosition.y - fuelPosition.y, 2) + Math.Pow(tankPosition.z - fuelPosition.y, 2));
 
-5.Dot Product : The sum of multplication of the corrosponding components of two values.
+4.Dot Product : The sum of multplication of the corrosponding components of two values.
 AKA two vectors multiplied together and then added.
 d = v.x * w.x + v.y * w.y
 This tells you what kind of angle you are looking at, if dot product is greater than zero, less than 90 degrees.
@@ -44,12 +43,15 @@ print("Angle " + b * Mathf.Rad2Deg);
 //unity calculations 
 print("Unity angle " + Vector3.Angle(tankForward, fuelDirection));
 
-6.Cross Product: To find out which direction to move torwards, cross product is a equation that
+5.Cross Product: To find out which direction to move torwards, cross product is a equation that
 can tell you. The equation is:
 v = (v.x, v.y, v.z)
 w = (w.x, w.y, w.z)
 v x w = (v.y * w.z - v.z * w.y, v.z * w.x - v.x * w.z, v.x * w.y - v.y * w.x)
-The resulting vector is one that is perpindicular to the two vectors.
+The resulting vector is one that is perpindicular to the two vectors, aka the direction needed to get to target.
+
+6. Auto Pilot: Combining what was learned so far, creating a script that can have the object
+move towards the goal and turn without the object "freaking out".
 
 
 
