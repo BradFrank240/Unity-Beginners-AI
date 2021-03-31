@@ -8,3 +8,6 @@ time.delta time to track time between updates.
 
 8. Velocity: v = distance / time. As you learned in school, velocity is the speed and direction
 and object is moving. 
+
+9.Acceleration: Just as velocity is the change in speed over time, acceleration is the change in velocity
+over time. Acceleration's formula is F = ma. or acceleration = force / mass. 
