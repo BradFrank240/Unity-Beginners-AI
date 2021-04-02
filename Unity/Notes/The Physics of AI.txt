@@ -10,4 +10,14 @@ time.delta time to track time between updates.
 and object is moving. 
 
 9.Acceleration: Just as velocity is the change in speed over time, acceleration is the change in velocity
-over time. Acceleration's formula is F = ma. or acceleration = force / mass. 
+over time. Acceleration's formula is F = ma. or acceleration = force / mass. Gravity is always applied.
+
+10. Calculating Trajectories: A parabola is a force with no other force than gravity. I'm going
+to be reusing the previous lesson scene as it is used again. Once the start of a parabola there
+are no other forces applied, just gravity. This uses some pretty advacned math. X and Z axis messing
+up as I created a 2d prodject, seems to be a common trend. Fixing bugs as I go. Might switch to 3D
+after this Prodject in the course. A question mark at the end of a return value means it can return
+both type and null.
+
+
+
