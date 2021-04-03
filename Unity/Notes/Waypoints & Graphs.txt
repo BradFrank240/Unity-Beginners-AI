@@ -12,4 +12,10 @@ hitting each other and thus getting of track. To fix these sorts of problems, yo
 or object that goes along the waypoints instead that the tank follows. Have to make sure tracker doesn't
 go to far from tank. 
 
-13. Graph Theory: 
+13. Graph Theory & A* Nodes are places, and edges are paths. An edge that goes both ways are called 
+undirected. An edge with only oneway, are directed. Two algorithsm for searching through nodes.
+Breadth-first search, adding values to nodes based on distance from user. Best understood when visuals also not optimal.
+A* is the most common algoritmem. In note terms, A* sends ghost out to seach and evalute the best paths.
+Has you just implement the a* algortihm, all has already been coded. More just has you put stuff in place
+that was already built. I'm going to re create once finsihed the whole course and create the A*
+myself. Also have waypoints auto generate. 
