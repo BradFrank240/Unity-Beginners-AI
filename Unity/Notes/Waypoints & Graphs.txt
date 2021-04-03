@@ -1,0 +1,13 @@
+Waypoints & Graphs,
+Found in Unity-AI-4-Beginners-Part2
+
+11.Waypoints: Just showing off how waypoint can be used. Having a bot follow a series of places.
+However implementation of getting the way points was just using the inspector and a public array.
+
+12.Following a Circuit: Going to continue using the same scene. This part is about having the bots
+that follow the waypoints collide with eachother and not just mesh together. 
+Still having us use individual pieces for one bot, assumed so we can understand what the pieces
+do before applying it to groups. Having physics has the user give up some control, such as objects
+hitting each other and thus getting of track. To fix these sorts of problems, you can add a tracker
+or object that goes along the waypoints instead that the tank follows. Have to make sure tracker doesn't
+go to far from tank. 
