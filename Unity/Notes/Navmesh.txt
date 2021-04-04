@@ -1,0 +1,8 @@
+Had to skip to here so i can apply the a* algorithm.
+
+The method orginally called a meta map. A navmesh is an auto generated map of the waypoints on a map.
+They are not called bots, they are called agents, now they tell me. But they do all mean the same thing.
+So the agents know about the navigation mesh in the world and it's values. You need to give the agents
+the navigation agent component. And for object that are part of the navigation mesh, they should be
+included in the navigation static propertie.
+Alot of the things I coded unity will actually handle for me. 

@@ -1,0 +1,14 @@
+A* Algorithem.
+
+Part 1: The A* algorithem was made to find an optimal path to find the best path through an enviroment.
+It's important to understand how the algorithem works. Basicly it's about finding the closest path possible.
+We store values for everymovement the bot could make, this is refered to h, (h = cost to goal)
+H could include cost as damage taken to move their and time. To keep simple, just use the distance.
+g is the cost from th start, or how close this point is. Add these together to find your f value.
+F value is compared between the two points or options you have. The lowest value is chosen and 
+added to a closed list. And the new points their are calculated and we repeat until we find the lowest
+f value. Once it found the path it will go backwords through the path and rember every node it went
+through to get the end result.
+
+Some reason the starting file is not avalible. I'm going to go ahead to navigation meshes and then
+come back to here.

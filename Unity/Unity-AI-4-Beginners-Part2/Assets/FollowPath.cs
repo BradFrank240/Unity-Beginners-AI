@@ -4,38 +4,45 @@ using UnityEngine;
 
 public class FollowPath : MonoBehaviour
 {
-    Transform goal;
-    float speed = 10.0f;
-    float accuracy = 1.0f;
-    float rotSpeed = 2.0f;
+    //Transform goal;
+    //float speed = 10.0f;
+    //float accuracy = 1.0f;
+    //float rotSpeed = 2.0f;
     public GameObject wpManager;
     GameObject[] wps;
-    GameObject currentNode;
-    int currentWP = 0;
-    Graph g;
+    //GameObject currentNode;
+    //int currentWP = 0;
+    //Graph g;
+
+    UnityEngine.AI.NavMeshAgent agent;
+
 
     private void Start()
     {
         wps = wpManager.GetComponent<WPManager>().waypoints;
-        g = wpManager.GetComponent<WPManager>().graph;
-        currentNode = wps[7];
-        
+        //g = wpManager.GetComponent<WPManager>().graph;
+        //currentNode = wps[7];
+
+        agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     public void GoToStart()
     {
-        g.AStar(currentNode, wps[0]);
-        currentWP = 0;
+        agent.SetDestination(wps[0].transform.position);
+        //g.AStar(currentNode, wps[0]);
+        //currentWP = 0;
     }
 
     public void GoToEnd()
     {
-        g.AStar(currentNode, wps[wps.Length -1]);
-        currentWP = 0;
+        agent.SetDestination(wps[wps.Length - 1].transform.position);
+        //g.AStar(currentNode, wps[wps.Length -1]);
+        //currentWP = 0;
     }
 
     private void LateUpdate()
     {
+        /*
         if(g.getPathLength() == 0 || currentWP == g.getPathLength())
         {
             return;
@@ -61,6 +68,8 @@ public class FollowPath : MonoBehaviour
 
             this.transform.Translate(0, 0, speed * Time.deltaTime);
         }
+        */
+
     }
 
 
