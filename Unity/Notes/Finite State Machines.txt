@@ -1,0 +1,3 @@
+A FSM or Finite state machine is a state pattern that can only 
+exist in one state  at a time and transition to set states.
+
