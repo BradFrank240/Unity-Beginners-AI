@@ -7,8 +7,8 @@ using UnityEngine.AI;
 public class Idle : State
 {
     //Constructor for idle state
-    public Idle(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
-        : base(_npc, _agent, _anim, _player)
+    public Idle(GameObject _npc, NavMeshAgent _agent, Transform _player)
+        : base(_npc, _agent, _player)
     {
 
         stateName = STATE.IDEL;
@@ -16,25 +16,30 @@ public class Idle : State
 
     public override void Enter()
     {
-        anim.SetTrigger("isIdle");
+
+        npc.GetComponent<MeshRenderer>().material.color = Color.green;
 
         base.Enter();
     }
 
     public override void Update()
     {
-        if(Random.Range(0, 100) < 10)
+
+        float random = Random.Range(0, 100);
+        Debug.Log("Random chance : "+ random);
+        if (random < 10)
         {
-            nextState = new Patrol(npc, agent, anim, playerPosistion);
+            
+            nextState = new Patrol(npc, agent, playerPosistion);
             stage = EVENT.EXIT;
         }
+        
         base.Update();
     }
 
     public override void Exit()
     {
-        anim.ResetTrigger("isIdle");
-
+        
         base.Exit();
     }
 

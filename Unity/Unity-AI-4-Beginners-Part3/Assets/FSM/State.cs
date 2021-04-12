@@ -21,7 +21,6 @@ public class State
     public STATE stateName;
     protected EVENT stage;
     protected GameObject npc;
-    protected Animator anim;
     protected Transform playerPosistion;
     //holds what state to go from here 
     protected State nextState;
@@ -32,12 +31,11 @@ public class State
     float shootDist = 7.0f;
 
     //contructor class of states
-    public State(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
+    public State(GameObject _npc, NavMeshAgent _agent, Transform _player)
     {
         npc = _npc;
-        agent = _agent;
-        anim = _anim;
         playerPosistion = _player;
+        agent = _agent;
         stage = EVENT.ENTER;
     }
 
