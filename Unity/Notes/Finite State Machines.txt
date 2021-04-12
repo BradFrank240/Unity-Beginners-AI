@@ -1,3 +1,12 @@
 A FSM or Finite state machine is a state pattern that can only 
 exist in one state  at a time and transition to set states.
+Created a new prodject to store these lessons as waypoints and graphs was very cluttered.
+
+Finite State Machines: Different behaviors in different states, using the state patteren. 
+As I have seen with my past FSM's, a state doesn't just have a enter and update method, but alos
+a Exit method. Their is use of a singleton
+
+
+
+
 
