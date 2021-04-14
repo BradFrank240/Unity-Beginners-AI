@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class Idle : State
+public class IDLE : State
 {
     //Constructor for idle state
-    public Idle(GameObject _npc, NavMeshAgent _agent, Transform _player)
+    public IDLE(GameObject _npc, NavMeshAgent _agent, Transform _player)
         : base(_npc, _agent, _player)
     {
 
-        stateName = STATE.IDEL;
+        stateName = STATE.IDLE;
     }
 
     public override void Enter()
@@ -25,21 +25,27 @@ public class Idle : State
     public override void Update()
     {
 
+        if (CanSeePlayer())
+        {
+            nextState = new Pursue(npc, agent, playerPosistion);
+            stage = EVENT.EXIT;
+        }
+
         float random = Random.Range(0, 100);
-        Debug.Log("Random chance : "+ random);
+        
         if (random < 10)
         {
-            
             nextState = new Patrol(npc, agent, playerPosistion);
             stage = EVENT.EXIT;
         }
+
+
         
-        base.Update();
+         
     }
 
     public override void Exit()
     {
-        
         base.Exit();
     }
 
