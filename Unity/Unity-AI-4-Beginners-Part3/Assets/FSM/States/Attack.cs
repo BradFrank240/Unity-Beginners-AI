@@ -45,7 +45,7 @@ public class Attack : State
             if (!CanSeePlayer())
             {
                 //
-                nextState = new IDLE(npc, agent, playerPosistion);
+                nextState = new SAFEPLACE(npc, agent, playerPosistion);
                 stage = EVENT.EXIT;
             }
             else
