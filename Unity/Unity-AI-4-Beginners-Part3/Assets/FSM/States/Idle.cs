@@ -11,7 +11,7 @@ public class IDLE : State
         : base(_npc, _agent, _player)
     {
 
-        stateName = STATE.IDLE;
+        stateName = STATE.IDEL;
     }
 
     public override void Enter()

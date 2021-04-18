@@ -26,9 +26,9 @@ public class State
     protected State nextState;
     protected NavMeshAgent agent;
 
-    //float visDistance = 10.0f;
-    //float visAngle = 30.0f;
-    //float shootDist = 7.0f;
+    float visDistance = 10.0f;
+    float visAngle = 30.0f;
+    float shootDist = 7.0f;
 
     //contructor class of states
     public State(GameObject _npc, NavMeshAgent _agent, Transform _player)
@@ -69,5 +69,37 @@ public class State
         }
         return this;
     }
+
+    //Helper methods
+
+
+    //Method for AI to check if player in view cone
+    public bool CanSeePlayer()
+    {
+        Vector3 playerDirection = playerPosistion.position - npc.transform.position;
+
+        //Direction of pllayer 
+        float angle = Vector3.Angle(playerDirection, npc.transform.forward);
+
+        //Check if in vissible distance, 
+        if (playerDirection.magnitude < visDistance && angle < visAngle)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    //check if AI is in range
+    public bool CanAttackPlayer()
+    {
+        Vector3 direction = playerPosistion.position - npc.transform.position;
+
+        if (direction.magnitude < shootDist)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
 }
