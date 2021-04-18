@@ -26,9 +26,9 @@ public class State
     protected State nextState;
     protected NavMeshAgent agent;
 
-    float visDistance = 10.0f;
-    float visAngle = 30.0f;
-    float shootDist = 7.0f;
+    //float visDistance = 10.0f;
+    //float visAngle = 30.0f;
+    //float shootDist = 7.0f;
 
     //contructor class of states
     public State(GameObject _npc, NavMeshAgent _agent, Transform _player)
@@ -56,6 +56,8 @@ public class State
         stage = EVENT.EXIT; 
     }
 
+
+    //Handles the whole porcess of state machine. 
     public State Process()
     {
         if (stage == EVENT.ENTER) Enter();
