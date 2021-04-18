@@ -18,6 +18,9 @@ public sealed class GameEnviroment
     //A public list of the check points for classes to grab.
     public List<GameObject> Checkpoints { get { return _checkpoints; } }
 
+    private GameObject _safepoint;
+
+    public GameObject SafePoint { get { return _safepoint; }  }
     public static GameEnviroment Singleton
     {
         get
@@ -27,6 +30,7 @@ public sealed class GameEnviroment
             {
                 instance = new GameEnviroment();
                 instance.Checkpoints.AddRange(GameObject.FindGameObjectsWithTag("CheckPoint"));
+                instance._safepoint = GameObject.FindGameObjectWithTag("SAFE");
             }
 
             return instance;

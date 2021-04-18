@@ -14,7 +14,7 @@ public class Patrol : State
         : base(_npc, _agent,  _player)
     {
         stateName = STATE.PATROL;
-        agent.speed = 2;
+        agent.speed = 5;
         agent.isStopped = false;
 
     }
@@ -43,9 +43,11 @@ public class Patrol : State
             agent.SetDestination(GameEnviroment.Singleton.Checkpoints[currentIndex].transform.position);
         }
 
-
-
-        base.Update();
+        if (CanSeePlayer())
+        {
+            nextState = new Pursue(npc, agent, playerPosistion);
+            stage = EVENT.EXIT;
+        }
     }
 
     public override void Exit()

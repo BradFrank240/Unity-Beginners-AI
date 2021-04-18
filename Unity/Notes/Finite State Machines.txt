@@ -4,9 +4,12 @@ Created a new prodject to store these lessons as waypoints and graphs was very c
 
 Finite State Machines: Different behaviors in different states, using the state patteren. 
 As I have seen with my past FSM's, a state doesn't just have a enter and update method, but alos
-a Exit method. Their is use of a singleton
-
-
+a Exit method. Their is use of a singleton. However the way this state machine work is interesting, 
+because it handles all the transitions. Therefore you don't have to manul say what to do on exit.
+However this system also is creating the states on the fly which is sub optimal, I'll have to see if this
+is addresed. She does mention that you should be passing through componenets and not using get componenet. 
+Passing around the objects own data could bog down the pattern over time. I'll have to talk to an expert on the
+area.
 
 
 
