@@ -1,0 +1,3 @@
+GAOP or goal oriented action planning is a AI system much like FSM. Instead their is
+no predetermined paths from each state. Rather a bot has a series of actions or
+states to choose from to acheive a goal and it decides. 
