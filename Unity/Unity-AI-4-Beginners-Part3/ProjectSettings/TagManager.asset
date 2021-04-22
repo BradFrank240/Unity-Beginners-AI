@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CheckPoint
   - SAFE
+  - FrontArea
+  - Surgery
+  - Break
+  - Waiting
   layers:
   - Default
   - TransparentFX
