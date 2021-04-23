@@ -12,15 +12,26 @@ public sealed class GWorld
     //dictionary holding all world states
     private static WorldStates world;
 
+    //patients go in the queue for the nurst to get rid of 
+    private static Queue<GameObject> patients;
+
     static GWorld()
     {
         world = new WorldStates();
-
+        patients = new Queue<GameObject>();
     }
 
-    private GWorld()
-    {
 
+
+    public void AddPatient(GameObject p) 
+    {
+        patients.Enqueue(p);
+    }
+
+    public GameObject RemovePatient()
+    {
+        if (patients.Count == 0) return null;
+        return patients.Dequeue();
     }
 
     public static GWorld Instance
@@ -32,6 +43,8 @@ public sealed class GWorld
     {
         return world;
     }
+
+
 
 
 

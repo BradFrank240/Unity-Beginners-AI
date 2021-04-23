@@ -25,7 +25,7 @@ public class WorldStates
         return states.ContainsKey(key);
     }
 
-    void AddState(string key, int value)
+    public void AddState(string key, int value)
     {
         states.Add(key, value);
 
@@ -40,10 +40,11 @@ public class WorldStates
             {
                 RemoveState(key);
             }
-            else
-            {
-                states.Add(key, value);
-            }
+            
+        }
+        else
+        {
+            states.Add(key, value);
         }
     }
 

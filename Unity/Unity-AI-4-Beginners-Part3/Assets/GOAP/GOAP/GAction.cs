@@ -8,11 +8,11 @@ public abstract class GAction : MonoBehaviour
     //actions all have names
     public string actionName = "Action";
     //Cost of the action
-    public float coast = 1.0f;
+    public float cost = 1.0f;
     //Location of objective
     public GameObject target;
     //The tag of the object 
-    public GameObject targetTag;
+    public string targetTag;
     //Duration of an action
     public float duration = 0;
     public WorldState[] preConditions;

@@ -10,6 +10,7 @@ TagManager:
   - Surgery
   - Break
   - Waiting
+  - Door
   layers:
   - Default
   - TransparentFX
