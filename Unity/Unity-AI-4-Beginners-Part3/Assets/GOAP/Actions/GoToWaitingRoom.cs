@@ -15,10 +15,11 @@ public class GoToWaitingRoom : GAction
 
     public override bool PostPerform()
     {
-        GWorld.Instance.GetWorld().ModifyState("IsWaiting", 1);
+        GWorld.Instance.GetWorld().ModifyState("isWaiting", 1);
         GWorld.Instance.AddPatient(this.gameObject);
 
-
+        
+        this.beliefs.ModifyState("atHospital", 1);
 
 
         return true; 

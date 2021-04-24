@@ -23,6 +23,12 @@ public abstract class GAction : MonoBehaviour
     public Dictionary<string, int> effects;
 
     public WorldStates agentBeliefs;
+   
+
+
+    public GInventory inventory;
+    public WorldStates beliefs;
+
 
     public bool running = false;
 
@@ -36,6 +42,8 @@ public abstract class GAction : MonoBehaviour
     public void Awake()
     {
         agent = this.gameObject.GetComponent<NavMeshAgent>();
+            
+
 
         if(preConditions != null)
         {
@@ -52,6 +60,9 @@ public abstract class GAction : MonoBehaviour
                 effects.Add(a.key, a.value);
             }
         }
+
+        inventory = this.GetComponent<GAgent>().inventory;
+        beliefs = this.GetComponent<GAgent>().beliefs;
     }
 
     public bool IsAchievable()
