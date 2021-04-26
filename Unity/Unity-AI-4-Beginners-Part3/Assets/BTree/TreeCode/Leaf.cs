@@ -20,7 +20,7 @@ public class Leaf : BNode
         ProcessMethod = pm;
     }
     
-
+    
     public override Status Process()
     {
         if(ProcessMethod != null)
