@@ -31,20 +31,14 @@ public class FollowWaypoints : MonoBehaviour
         //check if close enough to waypoint
         if (Vector3.Distance(this.transform.position, _Waypoint.transform.position) > 2f)
         {
-            //find the roation value to look at goal
-            Quaternion lookAtGoal = Quaternion.LookRotation(_Waypoint.transform.position - this.transform.position);
-            
-            //Look at goal
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, lookAtGoal, rotationSpeed * Time.deltaTime);
-
-            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-
+            //LooknSeek(_Waypoint.transform.position);    
+            MoveTorwardsGoal(_Waypoint.transform.position);
         }
         else
         {
             //check if next goal exceeds limit
             _CurrentWaypoint++;
-            if (_CurrentWaypoint > waypoints.Count)
+            if (_CurrentWaypoint > waypoints.Count - 1)
             {
                 _CurrentWaypoint = 0;
             }
@@ -54,6 +48,36 @@ public class FollowWaypoints : MonoBehaviour
 
         
     }
+
+    
+    /// <summary>
+    /// Look at goal and move torwards it
+    /// </summary>
+    /// <param name="goal"></param>
+    private void LooknSeek(Vector3 goal)
+    {
+        //finds rotation goal
+        Quaternion rotationGoal = Quaternion.LookRotation(goal - this.transform.position);
+        //rotates towards
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotationGoal, rotationSpeed * Time.deltaTime);
+
+        this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+
+
+    }
+
+    /// <summary>
+    /// Just move torwards goal, don't look at it
+    /// </summary>
+    /// <param name="goal"></param>
+    private void MoveTorwardsGoal(Vector3 goal)
+    {
+        
+        transform.Translate((goal - this.transform.position).normalized * moveSpeed * Time.deltaTime);
+    }
+
+
+
 
 
 
